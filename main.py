@@ -162,16 +162,16 @@
 from rag_pipeline.data_loader import load_all_documents
 from rag_pipeline.vectorstore import DbVectorStore
 from rag_pipeline.search import RAGSearch
-
+from rag_pipeline.chat_context import ChatContext
 # Example usage
 if __name__ == "__main__":
     # docs = load_all_documents("data")
     # print(docs)
-    store = DbVectorStore("personal_store")
-    store.build_from_documents(docs)
+    # store = DbVectorStore("personal_store")
+    # store.build_from_documents(docs)
     # store.load()
     # print(store.query("What is attention mechanism?", top_k=3))
-    rag_search = RAGSearch()
+    rag_search = ChatContext()
     query = "cat is brown."
     summary = rag_search.search_and_summarize(query, top_k=3)
     print("Summary:", summary)
